@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #312f31;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            bottom: 90px;
+        }
+
+        .logo-container {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            top: 100px;
+        }
+
+        .logo-container img {
+            width: 150px;
+            object-fit: cover;
+        }
+
+        .img-container {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            top: 100px;
+        }
+
+        .img-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 14px solid #312F31;
+        }
+
+        .root {
+            position: relative;
+            top: 100px;
+        }
+
+        .content {
+            position: relative;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            min-height: 500px;
+            /* Set a minimum height */
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 43px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Distribute content evenly */
+        }
+
+        .client-name {
+            color: #312F31;
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Aleo', serif;
+            margin-bottom: 5px;
+        }
+
+        .client-profession {
+            color: #312F31;
+            font-size: 11px;
+            font-weight: 500;
+            margin: 5px 0;
+            font-family: 'Aleo', serif;
+            margin-bottom: 30px;
+        }
+
+        .client-social-handles img {
+            width: 24px;
+            height: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .client-social-handles img:hover {
+            transform: scale(1.2);
+        }
+
+        .client-description {
+            font-size: 10px;
+            font-weight: 400;
+            color: #312F31;
+            margin-bottom: 20px;
+            line-height: 14px;
+            font-family: 'Aleo', serif;
+        }
+
+        .client-expertise {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0px;
+        }
+
+        .capsule {
+            border: 1px solid #312F31;
+            border-radius: 15px;
+            padding: 8px 15px;
+            font-size: 9px;
+            color: #312F31;
+            font-weight: 500;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+            font-family: 'Aleo', serif;
+        }
+
+        .capsule:hover {
+            background-color: #312F31;
+            color: #fff;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+            font-size: 8px;
+            color: #312F31;
+            gap: 10px;
+            margin: 25px 0;
+            line-height: 11px;
+            font-family: 'Aleo', serif;
+        }
+
+        .d-flex img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .d-flex span {
+            font-weight: 500;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .client-name {
+                font-size: 28px;
+            }
+
+            .client-profession {
+                font-size: 13px;
+            }
+
+            .client-description {
+                font-size: 11px;
+            }
+
+            .capsule {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+
+            .client-social-handles img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .d-flex {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                width: 70%;
+                padding: 12px;
+            }
+
+            .client-name {
+                font-size: 28px;
+            }
+
+            .client-profession {
+                font-size: 12px;
+            }
+
+            .client-description {
+                font-size: 10px;
+            }
+
+            .capsule {
+                font-size: 9px;
+                padding: 5px 10px;
+            }
+
+            .client-social-handles img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .d-flex {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .content {
+                width: 90%;
+                padding: 10px;
+            }
+
+            .client-name {
+                font-size: 20px;
+            }
+
+            .client-profession {
+                font-size: 11px;
+            }
+
+            .client-description {
+                font-size: 9px;
+            }
+
+            .capsule {
+                font-size: 8px;
+                padding: 4px 8px;
+            }
+
+            .client-social-handles img {
+                width: 16px;
+                height: 16px;
+            }
+
+            .d-flex {
+                font-size: 9px;
+            }
+        }
+
+        /* Left-align email, contact, and address containers */
+        .email-container,
+        .contact-container,
+        .address-container {
+            text-align: left;
+            width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <img src="logo.png" alt="logo">
+    </div>
+    <div class="img-container">
+        <img src="client.png" alt="Client">
+    </div>
+    <div class="content">
+        <div class="root">
+            <div class="client-name">
+                Anupam Goyal
+            </div>
+            <div class="client-profession">
+                Interior Designer | Architect
+            </div>
+            <div class="client-social-handles">
+                <a href="https://www.instagram.com/" target="_blank"><img src="Instagram.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/anupam-goyal-2a429b12/" target="_blank"><img src="LinkedIn 2.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/profile.php?id=100064163854952&sk=about" target="_blank"><img src="Facebook.png" alt="Facebook"></a>
+            </div>
+            <div class="client-description">
+                <span>At Anupam Goyal Design, we blend creativity and functionality to craft spaces that inspire.</span>
+            </div>
+            <div class="client-expertise">
+                <div class="capsule">Residential</div>
+                <div class="capsule">Commercial</div>
+                <div class="capsule">Hospitality</div>
+                <div class="capsule">Landscaping</div>
+                <div class="capsule">Vastu</div>
+            </div>
+            <div class="email-container d-flex">
+                <img src="Envelope.png" alt="Email">
+                <span>anupam.designer@gmail.com</span>
+            </div>
+            <div class="contact-container d-flex">
+                <img src="Phone.png" alt="Phone">
+                <span>797-418-9376</span>
+            </div>
+            <div class="address-container d-flex">
+                <img src="Location.png" alt="Location">
+                <span>A - 503, Gold plaza Apollo DB, Nipania, Indore 452010 (M.P.)</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
